@@ -10,6 +10,7 @@
       </a>
     </div>
 
+    {{-- Notifikasi sukses --}}
     @if (session('success'))
       <div class="alert alert-success alert-dismissible fade show" role="alert">
         {{ session('success') }}
@@ -17,7 +18,8 @@
       </div>
     @endif
 
-    <div class="table-responsive">
+    {{-- Tabel Data --}}
+    <div class="table-responsive mb-4">
       <table class="table table-striped align-middle">
         <thead class="table-dark">
           <tr>
@@ -52,6 +54,13 @@
           @endforelse
         </tbody>
       </table>
+    </div>
+
+    {{-- Tombol Kembali ke Home --}}
+    <div class="d-flex justify-content-end">
+      <a href="{{ route('home') }}" class="btn btn-secondary">
+        ← Kembali ke Home
+      </a>
     </div>
   </div>
 </div>

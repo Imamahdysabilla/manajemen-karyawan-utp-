@@ -6,7 +6,7 @@
     <div class="card shadow-sm border-0">
       <div class="card-body text-center py-5">
         <h3 class="fw-semibold mb-3">
-          Selamat Datang, {{ $users->name ?? auth()->user()->name }} 🎉
+          Selamat Datang, {{ $users->name ?? auth()->user()->name }}!
         </h3>
         <p class="text-muted mb-4">
           Anda berhasil login ke sistem manajemen karyawan.
