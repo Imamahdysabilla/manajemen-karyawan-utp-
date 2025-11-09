@@ -54,7 +54,7 @@
       {{-- Tombol Aksi --}}
       <div class="d-flex justify-content-end gap-2">
         <a href="{{ route('departemen.index') }}" class="btn btn-secondary px-4">Kembali</a>
-        <button type="submit" class="btn btn-primary px-4">Simpan</button>
+        <button type="submit" class="btn btn-warning px-4">Simpan</button>
       </div>
     </form>
   </div>

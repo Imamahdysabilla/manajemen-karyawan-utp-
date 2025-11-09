@@ -49,7 +49,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="submit" class="btn btn-warning">Simpan</button>
         <a href="{{ route('karyawan.index') }}" class="btn btn-secondary">Batal</a>
     </form>
 </div>

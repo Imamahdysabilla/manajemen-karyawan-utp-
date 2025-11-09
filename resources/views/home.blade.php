@@ -13,7 +13,7 @@
         </p>
 
         <div class="d-flex justify-content-center gap-3">
-          <a href="{{ route('karyawan.index') }}" class="btn btn-primary px-4">Lihat Data Karyawan</a>
+          <a href="{{ route('karyawan.index') }}" class="btn btn-warning px-4">Lihat Data Karyawan</a>
           <a href="{{ route('departemen.index') }}" class="btn btn-outline-secondary px-4">Lihat Departemen</a>
         </div>
       </div>
