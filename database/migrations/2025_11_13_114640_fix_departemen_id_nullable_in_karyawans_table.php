@@ -8,13 +8,15 @@ return new class extends Migration {
     public function up()
     {
         Schema::table('karyawans', function (Blueprint $table) {
-            // Hapus foreign key lama
-            $table->dropForeign(['departemen_id']);
+            // Hapus constraint lama jika ada
+            try {
+                $table->dropForeign(['departemen_id']);
+            } catch (\Exception $e) {}
 
-            // Ubah kolom jadi nullable
-            $table->unsignedBigInteger('departemen_id')->nullable()->change();
+            // Paksa ubah kolom jadi nullable
+            \DB::statement('ALTER TABLE karyawans ALTER COLUMN departemen_id DROP NOT NULL;');
 
-            // Tambahkan foreign key baru dengan onDelete('set null')
+            // Tambahkan kembali foreign key dengan onDelete set null
             $table->foreign('departemen_id')
                   ->references('id')
                   ->on('departemens')
@@ -26,7 +28,7 @@ return new class extends Migration {
     {
         Schema::table('karyawans', function (Blueprint $table) {
             $table->dropForeign(['departemen_id']);
-            $table->unsignedBigInteger('departemen_id')->nullable(false)->change();
+            \DB::statement('ALTER TABLE karyawans ALTER COLUMN departemen_id SET NOT NULL;');
             $table->foreign('departemen_id')->references('id')->on('departemens');
         });
     }
